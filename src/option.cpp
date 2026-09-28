@@ -41,6 +41,7 @@ Opt::Opt() {
   this->isdmax = false;
   this->dmax_dnn = false;
   this->ordered = false;
+  //this->ordered = true;
   this->link = SINGLE;
 
   this->m = 5;

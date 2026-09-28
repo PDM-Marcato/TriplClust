@@ -24,4 +24,6 @@ void clusters_to_gnuplot(const PointCloud &cloud,
 // saves the PointCloud *cloud* with clusters *cluster* as csv file.
 void clusters_to_csv(const PointCloud &cloud);
 
+std::vector<int> get_clusterID(const PointCloud &cloud);
+
 #endif

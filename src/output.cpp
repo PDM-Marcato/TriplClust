@@ -286,3 +286,33 @@ void clusters_to_csv(const PointCloud &cloud) {
     }
   }
 }
+
+
+std::vector<int> get_clusterID(const PointCloud &cloud) {
+
+  std::vector<int> IDs;
+  
+  for (PointCloud::const_iterator it = cloud.begin(); it != cloud.end(); ++it) {
+    int id_value = -1000;
+    if (it->cluster_ids.empty()) {
+      // Noise
+      //std::cout << "-1\n";
+        id_value = -1;
+    } else {
+      for (std::set<size_t>::const_iterator it2 = it->cluster_ids.begin();
+           it2 != it->cluster_ids.end(); ++it2) {
+        //if (it2 != it->cluster_ids.begin()) {
+          //std::cout << ";";
+        //}
+        //std::cout << *it2;
+        id_value = *it2;
+      }
+      //std::cout << std::endl;
+    }
+    IDs.push_back(id_value);    
+  }
+
+  return IDs;
+}
+
+
